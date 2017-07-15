@@ -7,7 +7,7 @@ $(document).ready(function () {
     datasets: [
       {
         fill: false,
-        label: 'Temperature',
+        label: 'Val',
         yAxisID: 'Temperature',
         borderColor: "rgba(255, 204, 0, 1)",
         pointBoarderColor: "rgba(255, 204, 0, 1)",
@@ -33,7 +33,7 @@ $(document).ready(function () {
   var basicOption = {
     title: {
       display: true,
-      text: 'Temperature & Humidity Real-time Data',
+      text: 'Val & Humidity Real-time Data',
       fontSize: 36
     },
     scales: {
@@ -41,7 +41,7 @@ $(document).ready(function () {
         id: 'Temperature',
         type: 'linear',
         scaleLabel: {
-          labelString: 'Temperature(C)',
+          labelString: 'Val(C)',
           display: true
         },
         position: 'left',
