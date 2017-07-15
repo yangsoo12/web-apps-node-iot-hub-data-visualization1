@@ -1,6 +1,6 @@
 $(document).ready(function () {
   var timeData = [],
-    temperatureData = [],
+    val = [],
     humidityData = [];
   var data = {
     labels: timeData,
