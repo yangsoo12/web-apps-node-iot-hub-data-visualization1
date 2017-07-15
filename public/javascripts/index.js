@@ -1,6 +1,6 @@
 $(document).ready(function () {
   var timeData = [],
-    val = [],
+    temperatureData = [],
     humidityData = [];
   var data = {
     labels: timeData,
@@ -14,7 +14,7 @@ $(document).ready(function () {
         backgroundColor: "rgba(255, 204, 0, 0.4)",
         pointHoverBackgroundColor: "rgba(255, 204, 0, 1)",
         pointHoverBorderColor: "rgba(255, 204, 0, 1)",
-        data: val
+        data: temperatureData
       },
       {
         fill: false,
@@ -77,14 +77,19 @@ $(document).ready(function () {
       if(!obj.time || !obj.val) {
         return;
       }
+
+      console.log(obj.time);
+      console.log(obj.val);
+      
+
       timeData.push(obj.time);
-      val.push(obj.val);
+      temperatureData.push(obj.val);
       // only keep no more than 50 points in the line chart
       const maxLen = 50;
       var len = timeData.length;
       if (len > maxLen) {
         timeData.shift();
-        val.shift();
+        temperatureData.shift();
       }
 
       if (obj.humidity) {
