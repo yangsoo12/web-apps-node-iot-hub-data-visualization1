@@ -66,7 +66,7 @@ $(document).ready(function () {
     options: basicOption
   });
 
-  var ws = new WebSocket('wss://' + jmghub.azure-devices.net);
+  var ws = new WebSocket('wss://' + location.host);
   ws.onopen = function () {
     console.log('Successfully connect WebSocket');
   }
