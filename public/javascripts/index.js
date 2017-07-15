@@ -78,6 +78,7 @@ $(document).ready(function () {
         return;
       }
 
+  console.log("onmessage");
       console.log(obj.time);
       console.log(obj.val);
       
