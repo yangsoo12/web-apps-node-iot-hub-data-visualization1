@@ -77,12 +77,6 @@ $(document).ready(function () {
       if(!obj.time || !obj.val) {
         return;
       }
-
-  console.log("onmessage");
-      console.log(obj.time);
-      console.log(obj.val);
-      
-
       timeData.push(obj.time);
       temperatureData.push(obj.val);
       // only keep no more than 50 points in the line chart
