@@ -78,13 +78,13 @@ $(document).ready(function () {
         return;
       }
       timeData.push(obj.time);
-      temperatureData.push(obj.val);
+      val.push(obj.val);
       // only keep no more than 50 points in the line chart
       const maxLen = 50;
       var len = timeData.length;
       if (len > maxLen) {
         timeData.shift();
-        temperatureData.shift();
+        val.shift();
       }
 
       if (obj.humidity) {
