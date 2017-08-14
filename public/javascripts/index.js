@@ -75,7 +75,7 @@ $(document).ready(function () {
     try {
       for(var name in obj)
 		{
-		  alert(name);
+		  console.log(name);
 		}
       var obj = JSON.parse(message.data);
       if(!obj.time || !obj.val) {
