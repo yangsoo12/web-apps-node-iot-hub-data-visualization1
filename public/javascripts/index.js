@@ -33,7 +33,7 @@ $(document).ready(function () {
   var basicOption = {
     title: {
       display: true,
-      text: 'Val & Humidity Real-time Data',
+      text: 'Temparature & Humidity Real-time Data',
       fontSize: 36
     },
     scales: {
@@ -73,16 +73,12 @@ $(document).ready(function () {
   ws.onmessage = function (message) {
     console.log('receive message' + message.data);
     try {
-      for(var name in obj)
-		{
-		  console.log(name);
-		}
       var obj = JSON.parse(message.data);
-      if(!obj.time || !obj.val) {
+      if(!obj.time || !obj.Temperature) {
         return;
       }
       timeData.push(obj.time);
-      temperatureData.push(obj.val);
+      temperatureData.push(obj.Temparature);
       // only keep no more than 50 points in the line chart
       const maxLen = 50;
       var len = timeData.length;
