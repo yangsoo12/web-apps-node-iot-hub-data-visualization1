@@ -73,6 +73,10 @@ $(document).ready(function () {
   ws.onmessage = function (message) {
     console.log('receive message' + message.data);
     try {
+      for(var name in obj)
+		{
+		  alert(name);
+		}
       var obj = JSON.parse(message.data);
       if(!obj.time || !obj.val) {
         return;
