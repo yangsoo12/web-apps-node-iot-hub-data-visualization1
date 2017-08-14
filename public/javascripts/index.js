@@ -75,6 +75,7 @@ $(document).ready(function () {
     try {
       var obj = JSON.parse(message.data);
       if(!obj.time || !obj.Temperature) {
+        console.log("adsfj");
         return;
       }
       timeData.push(obj.time);
