@@ -75,9 +75,10 @@ $(document).ready(function () {
     try {
       var obj = JSON.parse(message.data);
       if(!obj.time || !obj.Temperature) {
-        console.log("adsfj");
+        console.log("ininin");
         return;
       }
+      console.log("outoutout");
       timeData.push(obj.time);
       temperatureData.push(obj.Temparature);
       // only keep no more than 50 points in the line chart
