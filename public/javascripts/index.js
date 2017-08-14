@@ -77,9 +77,8 @@ $(document).ready(function () {
       if(!obj.time || !obj.params.Temperature) {
         return;
       }
-      console.log("outoutout");
       timeData.push(obj.time);
-      temperatureData.push(obj.Temparature);
+      temperatureData.push(obj.params.Temparature);
       // only keep no more than 50 points in the line chart
       const maxLen = 50;
       var len = timeData.length;
@@ -88,8 +87,8 @@ $(document).ready(function () {
         temperatureData.shift();
       }
 
-      if (obj.humidity) {
-        humidityData.push(obj.humidity);
+      if (obj.params.humidity) {
+        humidityData.push(obj.params.humidity);
       }
       if (humidityData.length > maxLen) {
         humidityData.shift();
