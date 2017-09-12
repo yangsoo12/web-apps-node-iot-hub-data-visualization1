@@ -2,6 +2,9 @@ $(document).ready(function () {
   var timeData = [],
     temperatureData = [],
     humidityData = [];
+ // android 20170912 23:29
+  var humilength = humidityData.length;
+  // finish android 20170912 23:29
   var data = {
     labels: timeData,
     datasets: [
@@ -95,6 +98,23 @@ $(document).ready(function () {
       }
 
       myLineChart.update();
+ //android 20170912 23:29
+      function nullPrint(){
+         App.showJS("--");
+      }
+      function humidPrint(){
+        humilength = humidityData.length;
+         App.showJS(humidityData[humilength-1]+"%");
+      }
+        humidityData.push(10);
+        humidityData.push(20);
+      if(humilength<humidityData.length || humilength == humidityData.length){
+           humidPrint();
+          }else if(humilength == 0){
+         nullPrint();
+        }
+//finish : android 20170912 23:29
+      
     } catch (err) {
       console.error(err);
     }
