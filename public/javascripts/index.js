@@ -106,8 +106,6 @@ $(document).ready(function () {
         humilength = humidityData.length;
          App.showJS(humidityData[humilength-1]+"%");
       }
-        humidityData.push(10);
-        humidityData.push(20);
       if(humilength<humidityData.length || humilength == humidityData.length){
            humidPrint();
           }else if(humilength == 0){
