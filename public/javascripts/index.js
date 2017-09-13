@@ -159,15 +159,15 @@ $(document).ready(function () {
       }
       function pm10Print(){
         pm10length = pm10Data.length;
-         App.showTemp(pm10Data[pm10length-1]+"%");
+         App.showPm10(pm10Data[pm10length-1]+"%");
       }
       
       function pm25Null(){
-         App.showPm10("--");
+         App.showPm25("--");
       }
       function pm25Print(){
         pm25length = pm25Data.length;
-         App.showTemp(pm25Data[pm25length-1]+"%");
+         App.showPm25(pm25Data[pm25length-1]+"%");
       }
       
 //---------yanji end 2/2------------
