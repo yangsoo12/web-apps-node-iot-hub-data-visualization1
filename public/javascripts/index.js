@@ -113,7 +113,7 @@ $(document).ready(function () {
  //---------yanji start 2/2------------
   //20170913 pm Data push    
       pm10Data.push(obj.params.pm10);
-      pm25Data.push(obj.params.pm25);
+      pm25Data.push(obj.params.pm2);
     
       //android 20170912 23:29
       if(humilength<humidityData.length || humilength == humidityData.length){
