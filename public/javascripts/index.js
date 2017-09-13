@@ -2,9 +2,20 @@ $(document).ready(function () {
   var timeData = [],
     temperatureData = [],
     humidityData = [];
+ //---------yanji start 1/2------------
+  
+  //20170913
+  var pm10Data = [],
+      pm25Data = [];
  // android 20170912 23:29
   var humilength = humidityData.length;
-  // finish android 20170912 23:29
+  // 20170913
+  var templength = temperatureData.length;
+  var pm10length = pm10Data.length;
+  var pm25length = pm25Data.length;
+  
+  //---------yanji end 1/2------------
+  
   var data = {
     labels: timeData,
     datasets: [
@@ -98,20 +109,68 @@ $(document).ready(function () {
       }
 
       myLineChart.update();
- //android 20170912 23:29
-      function nullPrint(){
-         App.showJS("--");
-      }
-      function humidPrint(){
-        humilength = humidityData.length;
-         App.showJS(humidityData[humilength-1]+"%");
-      }
+      
+ //---------yanji start 2/2------------
+  //20170913 pm Data push    
+      pm10Data.push(obj.params.pm10);
+      pm25Data.push(obj.params.pm25);
+    
+      //android 20170912 23:29
       if(humilength<humidityData.length || humilength == humidityData.length){
            humidPrint();
           }else if(humilength == 0){
-         nullPrint();
+           humidNull();
         }
-//finish : android 20170912 23:29
+      //20170913
+      if(templength<temperatureData.length || templength == temperatureData.length){
+           tempPrint();
+          }else if(templength == 0){
+           tempNull();
+        }
+      if(pm10length<pm10Data.length || pm10length == pm10Data.length){
+           pm10Print();
+          }else if(pm10length == 0){
+           pm10Null();
+        }
+      if(pm25length<pm25Data.length || pm25length == pm25Data.length){
+           pm25Print();
+          }else if(pm25length == 0){
+           pm25Null();
+        }
+      
+      //android 20170912 23:29
+      function humidNull(){
+         App.showHumid("--");
+      }
+      function humidPrint(){
+        humilength = humidityData.length;
+         App.showHumid(humidityData[humilength-1]+"%");
+      }
+      //20170913
+      function tempNull(){
+         App.showTemp("--");
+      }
+      function tempPrint(){
+        templength = temperatureData.length;
+         App.showTemp(temperatureData[templength-1]+"%");
+      }
+      function pm10Null(){
+         App.showPm10("--");
+      }
+      function pm10Print(){
+        pm10length = pm10Data.length;
+         App.showTemp(pm10Data[pm10length-1]+"%");
+      }
+      
+      function pm25Null(){
+         App.showPm10("--");
+      }
+      function pm25Print(){
+        pm25length = pm25Data.length;
+         App.showTemp(pm25Data[pm25length-1]+"%");
+      }
+      
+//---------yanji end 2/2------------
       
     } catch (err) {
       console.error(err);
