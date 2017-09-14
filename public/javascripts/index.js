@@ -91,8 +91,8 @@ $(document).ready(function () {
       if(!obj.time || !obj.params.Temperature) {
         return;
       }
-      document.getElementById("pm2").innerHTML = "pm2.0 : " + obj.pm2;
-  		document.getElementById("pm10").innerHTML = "pm10 : " + obj.pm10;
+      document.getElementById("pm2").innerHTML = "pm2.0 : " + obj.params.pm2;
+  		document.getElementById("pm10").innerHTML = "pm10 : " + obj.params.pm10;
       timeData.push(obj.time);
       temperatureData.push(obj.params.Temperature);
       // only keep no more than 50 points in the line chart
