@@ -91,6 +91,8 @@ $(document).ready(function () {
       if(!obj.time || !obj.params.Temperature) {
         return;
       }
+      document.getElementById("pm2").innerHTML = "pm2.0 : " + obj.pm2;
+  		document.getElementById("pm10").innerHTML = "pm10 : " + obj.pm10;
       timeData.push(obj.time);
       temperatureData.push(obj.params.Temperature);
       // only keep no more than 50 points in the line chart
@@ -121,25 +123,26 @@ $(document).ready(function () {
           }else{
             humilength = humidityData.length;
             templength = temperatureData.length;
-            pm10length = pm
-           insertDatas(humidityData[humilength],,,);
+            pm10length = pm10Data.length;
+            pm25length = pm25Data.length;
+           insertDatas(pm25Data[pm25length],humidityData[humilength],temperatureData[templength],humidityData[humilength]);
         }
       //20170913
-      if(templength<temperatureData.length || templength == temperatureData.length){
-           tempPrint();
-          }else if(templength == 0){
-           tempNull();
-        }
-      if(pm10length<pm10Data.length || pm10length == pm10Data.length){
-           pm10Print();
-          }else if(pm10length == 0){
-           pm10Null();
-        }
-      if(pm25length<pm25Data.length || pm25length == pm25Data.length){
-           pm25Print();
-          }else if(pm25length == 0){
-           pm25Null();
-        }
+//       if(templength<temperatureData.length || templength == temperatureData.length){
+//            tempPrint();
+//           }else if(templength == 0){
+//            tempNull();
+//         }
+//       if(pm10length<pm10Data.length || pm10length == pm10Data.length){
+//            pm10Print();
+//           }else if(pm10length == 0){
+//            pm10Null();
+//         }
+//       if(pm25length<pm25Data.length || pm25length == pm25Data.length){
+//            pm25Print();
+//           }else if(pm25length == 0){
+//            pm25Null();
+//         }
       
       //android 20170912 23:29
       function insertDatas(p2,p1,t,h){
