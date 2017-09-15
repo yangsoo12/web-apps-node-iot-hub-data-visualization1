@@ -7,13 +7,14 @@ $(document).ready(function () {
   //20170913
   var pm10Data = [],
       pm25Data = [];
+  var result;
  // android 20170912 23:29
   var humilength = humidityData.length;
   // 20170913
   var templength = temperatureData.length;
   var pm10length = pm10Data.length;
   var pm25length = pm25Data.length;
-  
+   
   //---------yanji end 1/2------------
   
   var data = {
@@ -118,35 +119,42 @@ $(document).ready(function () {
       pm25Data.push(obj.params.pm2);
     
       //android 20170912 23:29
-      if(humilength==0 || templength == 0 || pm10length ==0 || pm25length ==0){
+//       if(humilength==0 || templength == 0 || pm10length ==0 || pm25length ==0){
            
-          }else{
-            humilength = humidityData.length;
-            templength = temperatureData.length;
-            pm10length = pm10Data.length;
-            pm25length = pm25Data.length;
-           insertDatas(pm25Data[pm25length],humidityData[humilength],temperatureData[templength],humidityData[humilength]);
-        }
+//            }
+//           }else{
+//             humilength = humidityData.length;
+//             templength = temperatureData.length;
+//             pm10length = pm10Data.length;
+//             pm25length = pm25Data.length;
+//            insertDatas(pm25Data[pm25length],humidityData[humilength],temperatureData[templength],humidityData[humilength]);
+//         }
       //20170913
-//       if(templength<temperatureData.length || templength == temperatureData.length){
-//            tempPrint();
-//           }else if(templength == 0){
-//            tempNull();
-//         }
-//       if(pm10length<pm10Data.length || pm10length == pm10Data.length){
-//            pm10Print();
-//           }else if(pm10length == 0){
-//            pm10Null();
-//         }
-//       if(pm25length<pm25Data.length || pm25length == pm25Data.length){
-//            pm25Print();
-//           }else if(pm25length == 0){
-//            pm25Null();
-//         }
+    
+     if((pm25length<pm25Data.length || pm25length == pm25Data.length)&&(pm10length<pm10Data.length || pm10length == pm10Data.length)&&(templength<temperatureData.length || templength == temperatureData.length)&&(humilength<humidityData.length || humilength == humidityData.length)){
+          pm25length = pm25Data.length;
+          pm10length = pm10Data.length;
+          humilength = humidityData.length;
+          templength = temperatureData.length;
+          
+          insertDatas(pm25Data[pm25length-1],pm10Data[pm10length-1],temperatureData[templength-1],humidityData[humilength-1]);
+                          
+          }
+     
       
       //android 20170912 23:29
       function insertDatas(p2,p1,t,h){
-         Ao.showResult(p2,p1,t,h);
+         var p2State;
+         if(p2<31){
+           p2State = "좋음";
+         }else if(p2<81){
+           p2State = "보통";
+         }else if(p2<151){
+           p2State = "나쁨";
+         }else{
+           p2State = "매우나쁨";
+         }
+         Ao.showResult(p2,p1,t,h,p2State);
       }
       
      
