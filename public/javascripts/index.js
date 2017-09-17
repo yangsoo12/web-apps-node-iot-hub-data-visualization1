@@ -48,7 +48,7 @@ $(document).ready(function () {
   var basicOption = {
     title: {
       display: true,
-      text: 'Temperature & Humidity Real-time Data',
+      text: 'Temperature & pm2.5 Real-time Data',
       fontSize: 36
     },
     scales: {
@@ -61,10 +61,10 @@ $(document).ready(function () {
         },
         position: 'left',
       }, {
-          id: 'Humidity',
+          id: 'pm2.5',
           type: 'linear',
           scaleLabel: {
-            labelString: 'Humidity(%)',
+            labelString: 'pm2.5(ug/m3)',
             display: true
           },
           position: 'right'
