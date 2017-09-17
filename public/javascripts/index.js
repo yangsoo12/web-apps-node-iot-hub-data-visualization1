@@ -62,11 +62,11 @@ $(document).ready(function () {
         fill: false,
         label: 'Temperature',
         yAxisID: 'Temperature',
-        borderColor: "rgba(24, 120, 240, 1)",
-        pointBoarderColor: "rgba(24, 120, 240, 1)",
-        backgroundColor: "rgba(24, 120, 240, 0.4)",
-        pointHoverBackgroundColor: "rgba(24, 120, 240, 1)",
-        pointHoverBorderColor: "rgba(24, 120, 240, 1)",
+        borderColor: "rgba(255, 204, 0, 1)",
+        pointBoarderColor: "rgba(255, 204, 0, 1)",
+        backgroundColor: "rgba(255, 204, 0, 0.4)",
+        pointHoverBackgroundColor: "rgba(255, 204, 0, 1)",
+        pointHoverBorderColor: "rgba(255, 204, 0, 1)",
         data: temperatureData
       },
       {
@@ -196,7 +196,7 @@ var basicOption2 = {
         humidityData.shift();
       }
 
-      myLineChart.update();
+      //change position #1 original position
 
 
 //---------joonseo start 5/5----------
@@ -207,6 +207,9 @@ var basicOption2 = {
 	if(pm2Data.length>maxLen){
 		pm2Data.shift();
 	}
+	
+	myLineChart.update();//change position #1 changed position
+
 	if(obj.params.pm10){
 		pm10Data.push(obj.params.pm10);
 	}
