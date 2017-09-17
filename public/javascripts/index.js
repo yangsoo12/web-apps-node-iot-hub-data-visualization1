@@ -33,8 +33,8 @@ $(document).ready(function () {
       },
       {
         fill: false,
-        label: 'Humidity',
-        yAxisID: 'Humidity',
+        label: 'pm2.5',
+        yAxisID: 'pm2.5',
         borderColor: "rgba(24, 120, 240, 1)",
         pointBoarderColor: "rgba(24, 120, 240, 1)",
         backgroundColor: "rgba(24, 120, 240, 0.4)",
@@ -48,7 +48,7 @@ $(document).ready(function () {
   var basicOption = {
     title: {
       display: true,
-      text: 'Temperature & Humidity Real-time Data',
+      text: 'Temperature & pm2.5 Real-time Data',
       fontSize: 36
     },
     scales: {
@@ -61,10 +61,10 @@ $(document).ready(function () {
         },
         position: 'left',
       }, {
-          id: 'Humidity',
+          id: 'pm2.5',
           type: 'linear',
           scaleLabel: {
-            labelString: 'Humidity(%)',
+            labelString: 'pm2.5(ug/m3)',
             display: true
           },
           position: 'right'
@@ -104,8 +104,8 @@ $(document).ready(function () {
         temperatureData.shift();
       }
 
-      if (obj.params.Humidity) {
-        humidityData.push(obj.params.Humidity);
+      if (obj.params.pm2) {
+        humidityData.push(obj.params.pm2);
       }
       if (humidityData.length > maxLen) {
         humidityData.shift();
