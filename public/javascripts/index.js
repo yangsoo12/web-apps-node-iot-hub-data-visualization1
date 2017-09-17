@@ -1,8 +1,8 @@
 $(document).ready(function () {
   var timeData = [],
     temperatureData = [],
-    humidityData = [];
-  pm2Data = [];
+    humidityData = [],
+  pm2Data = [],
   pm10Data = [];
  //---------yanji start 1/2------------
   
