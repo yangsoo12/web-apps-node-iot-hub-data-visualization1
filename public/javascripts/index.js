@@ -2,6 +2,8 @@ $(document).ready(function () {
   var timeData = [],
     temperatureData = [],
     humidityData = [];
+  pm2Data = [];
+  pm10Data = [];
  //---------yanji start 1/2------------
   
   //20170913
@@ -40,7 +42,7 @@ $(document).ready(function () {
         backgroundColor: "rgba(24, 120, 240, 0.4)",
         pointHoverBackgroundColor: "rgba(24, 120, 240, 1)",
         pointHoverBorderColor: "rgba(24, 120, 240, 1)",
-        data: humidityData
+        data: pm2Data
       }
     ]
   }
@@ -110,7 +112,13 @@ $(document).ready(function () {
       if (humidityData.length > maxLen) {
         humidityData.shift();
       }
-
+	  if (obj.params.pm2) {
+		  pm2Data.push(obj.params.pm2);
+	  }
+	  if (pm2Data.length > maxLen)
+	  {
+		  pm2Data.shift();
+	  }
       myLineChart.update();
       
  //---------yanji start 2/2------------
