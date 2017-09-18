@@ -37,11 +37,11 @@ $(document).ready(function () {
         fill: false,
         label: 'pm2.5',
         yAxisID: 'pm2.5',
-        borderColor: "rgba(24, 120, 240, 1)",
-        pointBoarderColor: "rgba(24, 120, 240, 1)",
-        backgroundColor: "rgba(24, 120, 240, 0.4)",
-        pointHoverBackgroundColor: "rgba(24, 120, 240, 1)",
-        pointHoverBorderColor: "rgba(24, 120, 240, 1)",
+        borderColor: "rgba(255, 131, 131, 1)",
+        pointBoarderColor: "rgba(255, 131, 131, 1)",
+        backgroundColor: "rgba(255, 131, 131, 0.4)",
+        pointHoverBackgroundColor: "rgba(255, 131, 131, 1)",
+        pointHoverBorderColor: "rgba(255, 131, 131, 1)",
         data: pm2Data
       }
     ]
