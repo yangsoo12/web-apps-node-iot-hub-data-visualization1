@@ -153,11 +153,11 @@ $(document).ready(function () {
       //android 20170912 23:29
       function insertDatas(p2,p1,t,h){
          var p2State;
-         if(p2<31){
+         f(p2<16){
            p2State = "좋음";
-         }else if(p2<81){
+         }else if(p2<51){
            p2State = "보통";
-         }else if(p2<151){
+         }else if(p2<101){
            p2State = "나쁨";
          }else{
            p2State = "매우나쁨";
